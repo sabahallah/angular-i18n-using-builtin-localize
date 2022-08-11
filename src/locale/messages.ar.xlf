@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" datatype="plaintext" original="ng2.template" target-language="ar">
+    <body>
+      <trans-unit id="2559885490456050359" datatype="html">
+        <source>Brand</source>
+        <target state="translated">العلامة التجارية</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/layout/nav-bar/nav-bar.component.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2821179408673282599" datatype="html">
+        <source>Home</source>
+        <target>الرئيسية</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/layout/nav-bar/nav-bar.component.html</context>
+          <context context-type="linenumber">39</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1147358182484006761" datatype="html">
+        <source>Shop</source>
+        <target>المتجر</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/layout/nav-bar/nav-bar.component.html</context>
+          <context context-type="linenumber">45</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7922989125096435449" datatype="html">
+        <source>Contact</source>
+        <target>اتصل بنا</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/layout/nav-bar/nav-bar.component.html</context>
+          <context context-type="linenumber">51</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="about" datatype="html">
+      <source>About</source>
+        <target>من نحن</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/layout/nav-bar/nav-bar.component.html</context>
+          <context context-type="linenumber">57</context>
+        </context-group>
+           <note priority="1" from="description">who we are</note>
+        <note priority="1" from="meaning">about us</note>
+      </trans-unit>
+      <trans-unit id="3059442226224028515" datatype="html">
+        <source>العربية</source>
+        <target>English</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/layout/nav-bar/nav-bar.component.html</context>
+          <context context-type="linenumber">86</context>
+        </context-group>
+      </trans-unit>
+            <trans-unit id="3251089102438401612" datatype="html">
+        <source>this is the main image, a person looking for something</source>
+         <target>هذة هي الصورة الرئيسية للموقع، فيها شخص يبحث عن شئ</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/home/home.component.html</context>
+          <context context-type="linenumber">31</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4308782495037004934" datatype="html">
+        <source>Copyright 2022</source>
+        <target>الحقوق محفوظة 2022</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/home/home.component.html</context>
+          <context context-type="linenumber">35</context>
+        </context-group>
+      </trans-unit>
+            <trans-unit id="5805139185470391527" datatype="html">
+             <source>BEST PLACE TO CHOOSE YOUR CLOTHES</source>
+        <target>أفضل مكان لتختار ملابسك</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/home/home.component.ts</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+      </trans-unit>
+            <trans-unit id="3229273021239336735" datatype="html">
+        <source>SHOP NOW</source>
+        <target>تسوق الآن</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/home/home.component.ts</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="lorem" datatype="html">
+        <source><x id="loremName" equiv-text="lorem"/> dolor sit amet, consectetur adipisicing elit. Porro
+    beatae error laborum ab amet sunt recusandae? Reiciendis natus
+    perspiciatis optio.</source>
+    <target state="translated">إن <x id="loremName" equiv-text="lorem"/> هو ببساطة نص شكلي (بمعنى أن الغاية هي الشكل وليس المحتوى) ويُستخدم في صناعات المطابع ودور النشر. كان لوريم إيبسوم ولايزال المعيار للنص الشكلي منذ القرن الخامس عشر عندما قامت مطبعة مجهولة برص مجموعة من الأحرف بشكل عشوائي أخذتها من نص.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/home/home.component.ts</context>
+          <context context-type="linenumber">15,17</context>
+              
+        </context-group>
+         <note priority="1" from="description">random text</note>
+        <note priority="1" from="meaning">this is random text</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
