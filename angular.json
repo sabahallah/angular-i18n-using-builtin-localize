@@ -95,9 +95,13 @@
           "defaultConfiguration": "en"
         },
         "extract-i18n": {
-          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "builder": "ng-extract-i18n-merge:ng-extract-i18n-merge",
           "options": {
-            "browserTarget": "angular-i18n-using-builtin-localize:build"
+            "browserTarget": "angular-i18n-using-builtin-localize:build",
+            "format": "xlf",
+            "outputPath": "src/locale",
+            "targetFiles": ["messages.ar.xlf"],
+            "includeContext": true
           }
         },
         "test": {

@@ -46,8 +46,8 @@
           <context context-type="linenumber">87</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="3251089102438401612" datatype="html">
-        <source>this is the main image, a person looking for something</source>
+      <trans-unit id="1083492241811835687" datatype="html">
+        <source>this is the main image, a person looking for something to buy</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/home/home.component.html</context>
           <context context-type="linenumber">29</context>
@@ -75,15 +75,20 @@
         </context-group>
       </trans-unit>
       <trans-unit id="lorem" datatype="html">
-        <source><x id="loremName" equiv-text="lorem"/> dolor sit amet, consectetur adipisicing elit. Porro
-    beatae error laborum ab amet sunt recusandae? Reiciendis natus
-    perspiciatis optio.</source>
+        <source><x id="loremName" equiv-text="lorem"/> dolor sit amet, consectetur adipisicing elit. Porro beatae error laborum ab amet sunt recusandae? Reiciendis natus perspiciatis optio.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/home/home.component.ts</context>
           <context context-type="linenumber">15,17</context>
         </context-group>
         <note priority="1" from="description">random text</note>
         <note priority="1" from="meaning">this is random text</note>
+      </trans-unit>
+      <trans-unit id="5443518007260759592" datatype="html">
+        <source> Get in touch </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/contact/contact.component.html</context>
+          <context context-type="linenumber">7,9</context>
+        </context-group>
       </trans-unit>
     </body>
   </file>

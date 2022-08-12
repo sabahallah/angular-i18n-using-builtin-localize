@@ -35,13 +35,13 @@
         </context-group>
       </trans-unit>
       <trans-unit id="about" datatype="html">
-      <source>About</source>
+        <source>About</source>
         <target>من نحن</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/layout/nav-bar/nav-bar.component.html</context>
           <context context-type="linenumber">57</context>
         </context-group>
-           <note priority="1" from="description">who we are</note>
+        <note priority="1" from="description">who we are</note>
         <note priority="1" from="meaning">about us</note>
       </trans-unit>
       <trans-unit id="3059442226224028515" datatype="html">
@@ -49,15 +49,15 @@
         <target>English</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/layout/nav-bar/nav-bar.component.html</context>
-          <context context-type="linenumber">86</context>
+          <context context-type="linenumber">87</context>
         </context-group>
       </trans-unit>
-            <trans-unit id="3251089102438401612" datatype="html">
-        <source>this is the main image, a person looking for something</source>
-         <target>هذة هي الصورة الرئيسية للموقع، فيها شخص يبحث عن شئ</target>
+      <trans-unit id="1083492241811835687" datatype="html">
+        <source>this is the main image, a person looking for something to buy</source>
+        <target state="new">هذة هي الصورة الرئيسية للموقع، فيها شخص يبحث عن شئ</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/home/home.component.html</context>
-          <context context-type="linenumber">31</context>
+          <context context-type="linenumber">29</context>
         </context-group>
       </trans-unit>
       <trans-unit id="4308782495037004934" datatype="html">
@@ -68,15 +68,15 @@
           <context context-type="linenumber">35</context>
         </context-group>
       </trans-unit>
-            <trans-unit id="5805139185470391527" datatype="html">
-             <source>BEST PLACE TO CHOOSE YOUR CLOTHES</source>
+      <trans-unit id="5805139185470391527" datatype="html">
+        <source>BEST PLACE TO CHOOSE YOUR CLOTHES</source>
         <target>أفضل مكان لتختار ملابسك</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/home/home.component.ts</context>
           <context context-type="linenumber">9</context>
         </context-group>
       </trans-unit>
-            <trans-unit id="3229273021239336735" datatype="html">
+      <trans-unit id="3229273021239336735" datatype="html">
         <source>SHOP NOW</source>
         <target>تسوق الآن</target>
         <context-group purpose="location">
@@ -85,17 +85,22 @@
         </context-group>
       </trans-unit>
       <trans-unit id="lorem" datatype="html">
-        <source><x id="loremName" equiv-text="lorem"/> dolor sit amet, consectetur adipisicing elit. Porro
-    beatae error laborum ab amet sunt recusandae? Reiciendis natus
-    perspiciatis optio.</source>
-    <target state="translated">إن <x id="loremName" equiv-text="lorem"/> هو ببساطة نص شكلي (بمعنى أن الغاية هي الشكل وليس المحتوى) ويُستخدم في صناعات المطابع ودور النشر. كان لوريم إيبسوم ولايزال المعيار للنص الشكلي منذ القرن الخامس عشر عندما قامت مطبعة مجهولة برص مجموعة من الأحرف بشكل عشوائي أخذتها من نص.</target>
+        <source><x id="loremName" equiv-text="lorem"/> dolor sit amet, consectetur adipisicing elit. Porro beatae error laborum ab amet sunt recusandae? Reiciendis natus perspiciatis optio.</source>
+        <target state="translated">إن <x id="loremName" equiv-text="lorem"/> هو ببساطة نص شكلي (بمعنى أن الغاية هي الشكل وليس المحتوى) ويُستخدم في صناعات المطابع ودور النشر. كان لوريم إيبسوم ولايزال المعيار للنص الشكلي منذ القرن الخامس عشر عندما قامت مطبعة مجهولة برص مجموعة من الأحرف بشكل عشوائي أخذتها من نص.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/home/home.component.ts</context>
           <context context-type="linenumber">15,17</context>
-              
         </context-group>
-         <note priority="1" from="description">random text</note>
+        <note priority="1" from="description">random text</note>
         <note priority="1" from="meaning">this is random text</note>
+      </trans-unit>
+      <trans-unit id="5443518007260759592" datatype="html">
+        <source> Get in touch </source>
+        <target state="new"> Get in touch </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/contact/contact.component.html</context>
+          <context context-type="linenumber">7,9</context>
+        </context-group>
       </trans-unit>
     </body>
   </file>
