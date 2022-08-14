@@ -13,7 +13,7 @@
       "root": "",
       "sourceRoot": "src",
       "i18n": {
-        "sourceLocale": "en",
+        "sourceLocale": "en-US",
         "locales": {
           "ar": {
             "translation": "src/locale/messages.ar.xlf"
@@ -58,23 +58,13 @@
               ],
               "outputHashing": "all"
             },
-            "en": {
+            "development": {
               "buildOptimizer": false,
               "optimization": false,
               "vendorChunk": true,
               "extractLicenses": false,
               "sourceMap": true,
-              "namedChunks": true,
-              "localize": ["en"]
-            },
-            "ar": {
-              "buildOptimizer": false,
-              "optimization": false,
-              "vendorChunk": true,
-              "extractLicenses": false,
-              "sourceMap": true,
-              "namedChunks": true,
-              "localize": ["ar"]
+              "namedChunks": true
             }
           },
           "defaultConfiguration": "production"
@@ -85,14 +75,11 @@
             "production": {
               "browserTarget": "angular-i18n-using-builtin-localize:build:production"
             },
-            "en": {
-              "browserTarget": "angular-i18n-using-builtin-localize:build:en"
-            },
-            "ar": {
-              "browserTarget": "angular-i18n-using-builtin-localize:build:ar"
+            "development": {
+              "browserTarget": "angular-i18n-using-builtin-localize:build:development"
             }
           },
-          "defaultConfiguration": "en"
+          "defaultConfiguration": "development"
         },
         "extract-i18n": {
           "builder": "ng-extract-i18n-merge:ng-extract-i18n-merge",

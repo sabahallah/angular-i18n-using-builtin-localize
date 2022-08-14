@@ -3,13 +3,11 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --configuration en",
-    "start:ar": "ng serve --configuration ar",
+    "start": "ng serve",
     "build": "ng build",
-    "build:en": "ng build --configuration=en",
-    "build:ar": "ng build --configuration=ar",
     "watch": "ng build --watch --configuration en",
-    "test": "ng test"
+    "test": "ng test",
+    "i18n-create-json": "cd src/bin/xliff-to-json && node xliff-to-json.js ../../../src/locale/ && mv ../../../src/locale/*.json ../../../src/assets/i18n/"
   },
   "private": true,
   "dependencies": {
@@ -23,6 +21,7 @@
     "@angular/router": "^14.0.0",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
+    "xliff": "^6.1.0",
     "zone.js": "~0.11.4"
   },
   "devDependencies": {
