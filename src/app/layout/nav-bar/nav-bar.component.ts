@@ -1,4 +1,5 @@
-import { Component, Inject, LOCALE_ID, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import CookieUtils from '../../utils/CookieUtil';
 
 @Component({
   selector: 'app-nav-bar',
@@ -6,16 +7,19 @@ import { Component, Inject, LOCALE_ID, OnInit } from '@angular/core';
   styleUrls: ['./nav-bar.component.scss'],
 })
 export class NavBarComponent implements OnInit {
-  lang = 'en';
-  constructor(@Inject(LOCALE_ID) public activeLocale: string) {
-    if (activeLocale) {
-      this.lang = this.activeLocale.split('-')[0];
-      console.log(this.lang);
-    }
-  }
+  constructor() {}
 
   ngOnInit(): void {}
   changeLanguage() {
-    window.location.href = `/${this.lang === 'en' ? 'ar' : 'en'}`;
+    // add cookie for arabic language only
+    let langCookie = CookieUtils.getCookie('lang');
+    console.log('langCookie: ', langCookie);
+    if (!langCookie) {
+      CookieUtils.setCookie('lang', 'ar', '/', 365);
+    } else {
+      CookieUtils.removeCookie('lang');
+    }
+
+    window.location.reload();
   }
 }
