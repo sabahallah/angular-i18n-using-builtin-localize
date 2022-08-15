@@ -40,7 +40,7 @@ if (locale === availableLocales[0]) {
       return response.json();
     })
     .then((result) => {
-      loadTranslations(result);
+      loadTranslations(result.translations);
 
       platformBrowserDynamic()
         .bootstrapModule(AppModule)
