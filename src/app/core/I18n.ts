@@ -38,12 +38,13 @@ class I18n {
       registerLocaleData(localeModule.default);
 
       // Load translation file
+      // you can also load via fetch API
       const localeTranslationsModule = await import(
         `src/assets/i18n/messages.${this.locale}.json`
       );
 
       // Load translations for the current locale at run-time
-      loadTranslations(localeTranslationsModule.default);
+      loadTranslations(localeTranslationsModule.default.translations);
     }
   }
 }
