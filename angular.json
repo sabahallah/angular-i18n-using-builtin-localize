@@ -12,14 +12,7 @@
       },
       "root": "",
       "sourceRoot": "src",
-      "i18n": {
-        "sourceLocale": "en-US",
-        "locales": {
-          "ar": {
-            "translation": "src/locale/messages.ar.xlf"
-          }
-        }
-      },
+
       "prefix": "app",
       "architect": {
         "build": {
