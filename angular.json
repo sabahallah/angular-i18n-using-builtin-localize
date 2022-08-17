@@ -18,7 +18,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/angular-i18n-using-builtin-localize",
+            "outputPath": "dist/angular-i18n-using-builtin-localize/browser",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -94,6 +94,66 @@
             "styles": ["src/styles.scss"],
             "scripts": []
           }
+        },
+        "server": {
+          "builder": "@angular-devkit/build-angular:server",
+          "options": {
+            "outputPath": "dist/angular-i18n-using-builtin-localize/server",
+            "main": "server.ts",
+            "tsConfig": "tsconfig.server.json",
+            "i18nMissingTranslation": "error",
+            "inlineStyleLanguage": "scss"
+          },
+          "configurations": {
+            "production": {
+              "outputHashing": "media",
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ]
+            },
+            "development": {
+              "optimization": false,
+              "sourceMap": true,
+              "extractLicenses": false
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve-ssr": {
+          "builder": "@nguniversal/builders:ssr-dev-server",
+          "configurations": {
+            "development": {
+              "browserTarget": "angular-i18n-using-builtin-localize:build:development",
+              "serverTarget": "angular-i18n-using-builtin-localize:server:development"
+            },
+            "production": {
+              "browserTarget": "angular-i18n-using-builtin-localize:build:production",
+              "serverTarget": "angular-i18n-using-builtin-localize:server:production"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "prerender": {
+          "builder": "@nguniversal/builders:prerender",
+          "options": {
+            "routes": [
+              "/"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "angular-i18n-using-builtin-localize:build:production",
+              "serverTarget": "angular-i18n-using-builtin-localize:server:production"
+            },
+            "development": {
+              "browserTarget": "angular-i18n-using-builtin-localize:build:development",
+              "serverTarget": "angular-i18n-using-builtin-localize:server:development"
+            }
+          },
+          "defaultConfiguration": "production"
         }
       }
     }

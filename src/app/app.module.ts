@@ -8,7 +8,7 @@ import { NavBarComponent } from './layout/nav-bar/nav-bar.component';
 
 @NgModule({
   declarations: [AppComponent, NavBarComponent],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [BrowserModule.withServerTransition({ appId: 'serverApp' }), AppRoutingModule],
   providers: [I18nModule.setLocale(), I18nModule.setLocaleId()],
   bootstrap: [AppComponent],
 })
