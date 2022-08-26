@@ -20,6 +20,30 @@ export class NavBarComponent implements OnInit {
       CookieUtils.removeCookie('lang');
     }
 
-    window.location.reload();
+    location.reload();
+  }
+
+  getShop() {
+    return $localize`Shop`;
+  }
+
+  getBrand() {
+    return $localize`Brand`;
+  }
+
+  getHome() {
+    return $localize`Home`;
+  }
+
+  getContact() {
+    return $localize`Contact`;
+  }
+
+  getAbout() {
+    return $localize`About`;
+  }
+
+  getLanguage() {
+    return $localize`العربية`;
   }
 }

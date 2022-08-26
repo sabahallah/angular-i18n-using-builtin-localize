@@ -1,51 +1,96 @@
-import { registerLocaleData } from '@angular/common';
-import { APP_INITIALIZER, Injectable, LOCALE_ID } from '@angular/core';
+import {
+  DOCUMENT,
+  isPlatformBrowser,
+  registerLocaleData,
+} from '@angular/common';
+import {
+  APP_INITIALIZER,
+  Inject,
+  Injectable,
+  LOCALE_ID,
+  Optional,
+  PLATFORM_ID,
+} from '@angular/core';
 import { loadTranslations } from '@angular/localize';
+import { makeStateKey, TransferState } from '@angular/platform-browser';
+import { REQUEST } from '@nguniversal/express-engine/tokens';
+import { Request } from 'express';
 import CookieUtils from '../utils/CookieUtil';
 
 @Injectable({
   providedIn: 'root',
 })
 class I18n {
+  constructor(
+    @Optional() @Inject(REQUEST) private req: Request,
+    @Inject(PLATFORM_ID) private platform: any,
+    @Inject(TransferState) private transferState: TransferState,
+    @Inject(DOCUMENT) private document: Document
+  ) {}
   locale = 'en';
 
   async setLocale() {
-    // First locale is default, add additional after it
-    const availableLocales = ['en', 'ar'];
+    const supportedLocales = ['en', 'ar'];
+    const defaultLocal = 'en';
 
-    let langCookie = CookieUtils.getCookie('lang');
+    let langCookie = isPlatformBrowser(this.platform)
+      ? CookieUtils.getCookie('lang')
+      : this.req?.cookies.lang;
 
-    this.locale =
-      availableLocales.find((l) => langCookie === l) ??
-      availableLocales.find((l) => navigator.language.startsWith(l)) ??
-      availableLocales[0];
-
-    window.document.documentElement.lang = this.locale;
-    if (this.locale === 'ar') {
-      window.document.documentElement.dir = 'rtl';
+    if (isPlatformBrowser(this.platform)) {
+      this.locale =
+        supportedLocales.find((l) => langCookie === l) ??
+        supportedLocales.find((l) => navigator.language.startsWith(l)) ??
+        defaultLocal;
     } else {
-      window.document.documentElement.dir = 'ltr';
+      const langFromHeaders = this.req?.headers
+        ? this.req.headers['accept-language']?.split(',')[0].split('-')[0]
+        : undefined;
+      this.locale =
+        supportedLocales.find((l) => langCookie === l) ??
+        supportedLocales.find((l) => langFromHeaders === l) ??
+        defaultLocal;
     }
-    if (this.locale !== availableLocales[0]) {
-      // Use web pack magic string to only include required locale data
-      const localeModule = await import(
+
+    this.document.documentElement.lang = this.locale;
+
+    if (this.locale === 'ar') {
+      this.document.documentElement.dir = 'rtl';
+    } else {
+      this.document.documentElement.dir = 'ltr';
+    }
+
+    const localeModuleKey = makeStateKey<any>('transfer-state-local-module');
+    let localeModule = this.transferState.get(localeModuleKey, null);
+    if (!localeModule) {
+      localeModule = await import(
         /* webpackInclude: /(en|ar)\.mjs$/ */
 
         `/node_modules/@angular/common/locales/${this.locale}.mjs`
       );
 
-      // Set locale for built in pipes, dates, etc.
-      registerLocaleData(localeModule.default);
+      this.transferState.set(localeModuleKey, localeModule);
+    }
 
+    // Set locale for built in pipes, dates, etc.
+    registerLocaleData(localeModule.default);
+
+    const translationsKey = makeStateKey<any>('transfer-state-translations');
+    let localeTranslationsModule = this.transferState.get(
+      translationsKey,
+      null
+    );
+    if (!localeTranslationsModule) {
       // Load translation file
       // you can also load via fetch API
-      const localeTranslationsModule = await import(
+      localeTranslationsModule = await import(
         `src/assets/i18n/messages.${this.locale}.json`
       );
-
-      // Load translations for the current locale at run-time
-      loadTranslations(localeTranslationsModule.default.translations);
+      this.transferState.set(translationsKey, localeTranslationsModule);
     }
+
+    // Load translations for the current locale at run-time
+    loadTranslations(localeTranslationsModule.default.translations);
   }
 }
 
@@ -63,7 +108,9 @@ function setLocale() {
 function setLocaleId() {
   return {
     provide: LOCALE_ID,
-    useFactory: (i18n: I18n) => i18n.locale,
+    useFactory: (i18n: I18n) => {
+      return i18n.locale;
+    },
     deps: [I18n],
   };
 }
